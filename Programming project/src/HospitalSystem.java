@@ -27,7 +27,7 @@ public class HospitalSystems {
         boolean found = false;
         for (int i = 0; i < doctors.size(); i++) {
             Doctor existingDoc = doctors.get(i);
-            if (existingDoc.getID().equals(updatedDoctor.getID())) {
+            if (existingDoc.getID()==updatedDoctor.getID()) {
                 doctors.set(i, updatedDoctor);
                 System.out.println("Doctor details updated successfully.");
                 found = true;
@@ -50,7 +50,7 @@ public class HospitalSystems {
         boolean found = false;
         for (int i = 0; i < patients.size(); i++) {
             Patient currentPatient = patients.get(i);
-            if (currentPatient.getID().equals(updatedPatient.getID())) {
+            if (currentPatient.getID()==updatedPatient.getID()) {
                 patients.set(i, updatedPatient);
                 System.out.println("Patient details updated successfully.");
                 found = true;
