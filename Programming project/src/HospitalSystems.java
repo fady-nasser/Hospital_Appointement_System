@@ -20,7 +20,7 @@ public class HospitalSystems {
 
     public void addDoctor(Doctor doctor) {
         doctors.add(doctor);
-        System.out.println("Doctor added: " + doctor.getName()); 
+        System.out.println("Doctor added: " + doctor.getName());
     }
 
     public void editDoctor(Doctor updatedDoctor) {
@@ -39,7 +39,7 @@ public class HospitalSystems {
         }
     }
 
-    // Patient Methods 
+    // Patient Methods
 
     public void addPatient(Patient patient) {
         patients.add(patient);
@@ -62,17 +62,17 @@ public class HospitalSystems {
         }
     }
 
-    // Appointment Methods 
+    // Appointment Methods
     public void addAvailableSlot(LocalDate date, LocalTime time, Doctor doctor) {
         int newId = appointments.size() + 1;
         Appointment slot = new Appointment(newId, doctor, null, date, time, false, "Available Slot");
         appointments.add(slot);
-        
+
         System.out.println("Slot added for Dr. " + doctor.getName() + " on " + date);
     }
 
     public void bookAppointment(Appointment appointment) {
-        
+
         if (appointments.contains(appointment)) {
             appointment.setStatus(true);
             System.out.println("Appointment booked successfully.");
@@ -83,25 +83,25 @@ public class HospitalSystems {
 
     public void cancelAppointment(Appointment appointment) {
         if (appointments.contains(appointment)) {
-            appointment.setPatient(null); 
-            appointment.setStatus(false); 
+            appointment.setPatient(null);
+            appointment.setStatus(false);
             System.out.println("Appointment canceled and became available.");
         } else {
             System.out.println("Error: Appointment not found.");
         }
     }
 
-    // Reporting Methods (Returning Strings) 
+    // Reporting Methods (Returning Strings)
 
     public String getBookedAppointmentsByDoctor() {
         StringBuilder sb = new StringBuilder();
         sb.append("=== Booked Appointments Report ===\n");
         for (Appointment app : appointments) {
-            if (app.isStatus() == true) { 
+            if (app.isStatus() == true) {
                 sb.append("Dr. ").append(app.getDoctor().getName())
-                  .append(" | Patient: ").append(app.getPatient().getName())
-                  .append(" | Date: ").append(app.getDate())
-                  .append("\n");
+                        .append(" | Patient: ").append(app.getPatient().getName())
+                        .append(" | Date: ").append(app.getDate())
+                        .append("\n");
             }
         }
         return sb.toString();
@@ -113,9 +113,9 @@ public class HospitalSystems {
         for (Appointment app : appointments) {
             if (app.isStatus() == false) {
                 sb.append("Dr. ").append(app.getDoctor().getName())
-                  .append(" | Date: ").append(app.getDate())
-                  .append(" | Time: ").append(app.getTime())
-                  .append("\n");
+                        .append(" | Date: ").append(app.getDate())
+                        .append(" | Time: ").append(app.getTime())
+                        .append("\n");
             }
         }
         return sb.toString();
@@ -126,7 +126,7 @@ public class HospitalSystems {
         sb.append("=== Doctors by Experience ===\n");
         for (Doctor doc : doctors) {
             sb.append("Dr. ").append(doc.getName())
-              .append(" - Experience: ").append(doc.getExperience()).append("\n");
+                    .append(" - Experience: ").append(doc.getExperience()).append("\n");
         }
         return sb.toString();
     }
@@ -136,7 +136,7 @@ public class HospitalSystems {
         sb.append("=== Doctors by Specialization ===\n");
         for (Doctor doc : doctors) {
             sb.append("Dr. ").append(doc.getName())
-              .append(" - Specialization: ").append(doc.getSpecialization()).append("\n");
+                    .append(" - Specialization: ").append(doc.getSpecialization()).append("\n");
         }
         return sb.toString();
     }
