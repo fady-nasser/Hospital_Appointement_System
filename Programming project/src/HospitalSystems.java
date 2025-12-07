@@ -91,7 +91,7 @@ public class HospitalSystems {
         }
     }
 
-    // Reporting Methods (Returning Strings)
+    // Reporting Methods 
 
     public String getBookedAppointmentsByDoctor() {
         StringBuilder sb = new StringBuilder();
