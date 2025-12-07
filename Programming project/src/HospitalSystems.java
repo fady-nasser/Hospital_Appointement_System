@@ -4,12 +4,12 @@ import java.time.LocalTime;
 
 public class HospitalSystems {
 
-    // 1. Attributes (مطابق للصورة الثالثة)
+    //  Attributes
     private ArrayList<Doctor> doctors;
     private ArrayList<Patient> patients;
     private ArrayList<Appointment> appointments;
 
-    // 2. Constructor
+    //  Constructor
     public HospitalSystems() {
         this.doctors = new ArrayList<>();
         this.patients = new ArrayList<>();
