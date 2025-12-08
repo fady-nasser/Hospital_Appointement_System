@@ -1,14 +1,15 @@
 import java.util.ArrayList;
-import java.util.Date;
+// import java.util.Date;
+import java.time.LocalDateTime;
 public class Doctor extends Person {
     //Attributes
     private String specialization;
     private String experience;
-    private ArrayList<Date> availableTimeSlots = new ArrayList<>();
+    private ArrayList<LocalDateTime> availableTimeSlots = new ArrayList<>();
 
 
     //Constructor
-    Doctor(String name , String address , String phone , String email ,  String specialization , String experience , ArrayList<Date> availableTimeSlots ){
+    Doctor(String name , String address , String phone , String email ,  String specialization , String experience , ArrayList<LocalDateTime> availableTimeSlots ){
         setName(name);
         setID(++num);  //lazem ne2ollo el ID beta3o
         setAddress(address);
@@ -27,7 +28,7 @@ public class Doctor extends Person {
     public void setSpecialization(String specialization){
         this.specialization=specialization;
     }
-    public void setAvailableTimeSlots(ArrayList<Date> availableTimeSlots){
+    public void setAvailableTimeSlots(ArrayList<LocalDateTime> availableTimeSlots){
         this.availableTimeSlots=availableTimeSlots;
     }
 
@@ -39,7 +40,7 @@ public class Doctor extends Person {
     public String getSpecialization(){
         return specialization;
     }
-    public ArrayList<Date> getAvailableTimeSlots(){
+    public ArrayList<LocalDateTime> getAvailableTimeSlots(){
         return availableTimeSlots;
     }
 }

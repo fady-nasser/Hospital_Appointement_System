@@ -1,6 +1,7 @@
 import java.util.ArrayList;
-import java.time.LocalDate;
-import java.time.LocalTime;
+// import java.time.LocalDate;
+// import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class HospitalSystems {
 
@@ -63,12 +64,12 @@ public class HospitalSystems {
     }
 
     // Appointment Methods
-    public void addAvailableSlot(LocalDate date, LocalTime time, Doctor doctor) {
+    public void addAvailableSlot(LocalDateTime dateTime, Doctor doctor) {
         int newId = appointments.size() + 1;
-        Appointment slot = new Appointment(newId, doctor, null, date, time, false, "Available Slot");
+        Appointment slot = new Appointment(newId, doctor, null, dateTime, false, "Available Slot");
         appointments.add(slot);
 
-        System.out.println("Slot added for Dr. " + doctor.getName() + " on " + date);
+        System.out.println("Slot added for Dr. " + doctor.getName() + " on " + dateTime.toLocalDate() + " at " + dateTime.toLocalTime());
     }
 
     public void bookAppointment(Appointment appointment) {
@@ -100,7 +101,7 @@ public class HospitalSystems {
             if (app.isStatus() == true) {
                 sb.append("Dr. ").append(app.getDoctor().getName())
                         .append(" | Patient: ").append(app.getPatient().getName())
-                        .append(" | Date: ").append(app.getDate())
+                        .append(" | Date: ").append(app.getDateTime().toLocalDate())
                         .append("\n");
             }
         }
@@ -113,8 +114,8 @@ public class HospitalSystems {
         for (Appointment app : appointments) {
             if (app.isStatus() == false) {
                 sb.append("Dr. ").append(app.getDoctor().getName())
-                        .append(" | Date: ").append(app.getDate())
-                        .append(" | Time: ").append(app.getTime())
+                        .append(" | Date: ").append(app.getDateTime().toLocalDate())
+                        .append(" | Time: ").append(app.getDateTime().toLocalTime())
                         .append("\n");
             }
         }

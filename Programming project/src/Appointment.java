@@ -1,5 +1,6 @@
-import java.time.LocalDate;
-import java.time.LocalTime; 
+// import java.time.LocalDate;
+// import java.time.LocalTime; 
+import java.time.LocalDateTime;
 
 public class Appointment {
 
@@ -7,8 +8,9 @@ public class Appointment {
     private int appointmentID;
     private Doctor doctor;
     private Patient patient;
-    private LocalDate date;  
-    private LocalTime time;  
+    // private LocalDate date;  
+    // private LocalTime time;  
+    private LocalDateTime dateTime;
     private boolean status;
     private String notes;
 
@@ -19,12 +21,13 @@ public class Appointment {
     }
 
     // Parameterized Constructor
-    public Appointment(int appointmentID, Doctor doctor, Patient patient, LocalDate date, LocalTime time, boolean status, String notes) {
+    public Appointment(int appointmentID, Doctor doctor, Patient patient, LocalDateTime dateTime, boolean status, String notes) {
         this.appointmentID = appointmentID;
         this.doctor = doctor;
         this.patient = patient;
-        this.date = date;
-        this.time = time;
+        this.dateTime = dateTime;
+        // this.date = date;
+        // this.time = time;
         this.status = status;
         this.notes = notes;
     }
@@ -42,12 +45,15 @@ public class Appointment {
         this.patient = patient;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
+    // public void setDate(LocalDate date) {
+    //     this.date = date;
+    // }
 
-    public void setTime(LocalTime time) {
-        this.time = time;
+    // public void setTime(LocalTime time) {
+    //     this.time = time;
+    // }
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 
     public void setStatus(boolean status) {
@@ -71,13 +77,16 @@ public class Appointment {
         return patient;
     }
 
-    public LocalDate getDate() {
-        return date;
-    }
+    // public LocalDate getDate() {
+    //     return date;
+    // }
 
-    public LocalTime getTime() { 
-        return time;
-    }
+    // public LocalTime getTime() { 
+    //     return time;
+    // }
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }   
 
     public boolean isStatus() {
         return status;
