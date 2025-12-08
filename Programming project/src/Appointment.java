@@ -1,5 +1,3 @@
-// import java.time.LocalDate;
-// import java.time.LocalTime; 
 import java.time.LocalDateTime;
 
 public class Appointment {
@@ -7,9 +5,7 @@ public class Appointment {
     // 1. Attributes
     private int appointmentID;
     private Doctor doctor;
-    private Patient patient;
-    // private LocalDate date;  
-    // private LocalTime time;  
+    private Patient patient; 
     private LocalDateTime dateTime;
     private boolean status;
     private String notes;
@@ -26,8 +22,6 @@ public class Appointment {
         this.doctor = doctor;
         this.patient = patient;
         this.dateTime = dateTime;
-        // this.date = date;
-        // this.time = time;
         this.status = status;
         this.notes = notes;
     }
@@ -45,13 +39,6 @@ public class Appointment {
         this.patient = patient;
     }
 
-    // public void setDate(LocalDate date) {
-    //     this.date = date;
-    // }
-
-    // public void setTime(LocalTime time) {
-    //     this.time = time;
-    // }
     public void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
     }
@@ -76,14 +63,7 @@ public class Appointment {
     public Patient getPatient() {
         return patient;
     }
-
-    // public LocalDate getDate() {
-    //     return date;
-    // }
-
-    // public LocalTime getTime() { 
-    //     return time;
-    // }
+    
     public LocalDateTime getDateTime() {
         return dateTime;
     }   
