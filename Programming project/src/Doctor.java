@@ -31,8 +31,15 @@ public class Doctor extends Person {
     public void setAvailableTimeSlots(ArrayList<LocalDateTime> availableTimeSlots){
         this.availableTimeSlots=availableTimeSlots;
     }
-
-
+    //override
+    public void display(){
+        System.out.println("--Doctor details--");
+        System.out.println("Name:" + getName());
+        System.out.println("Specialization" + specialization);
+        System.out.println("Experience" + experience);
+        System.out.println("ID" + getID());
+    }
+        
     //Getters
     public String getExperience(){
         return experience;
