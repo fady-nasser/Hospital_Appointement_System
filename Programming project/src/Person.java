@@ -43,4 +43,7 @@ public abstract class  Person{
     public String getEmail(){
         return email;
     }
+    //abstract method
+    public abstract void display();
+        
 }
