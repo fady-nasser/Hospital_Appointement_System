@@ -15,6 +15,11 @@ public class Patient extends Person{
         this.age=age;
     }
 
+    //toString override
+    @Override
+    public String toString() {
+        return super.toString() + "\nAge: " + age + "\nMedical History ID: " + medicalHistoryId;
+    }
 
     //Setters
     public void setMedicalHistoryId(int medicalHistoryId){
@@ -23,14 +28,7 @@ public class Patient extends Person{
     public void setAge(int age){
         this.age=age;
     }
-  //override
-    public void display(){
-        System.out.println("--Patient details--");
-        System.out.println("Name:" + getName());
-        System.out.println("Age" + age);
-        System.out.println("ID" + getID());
-    }
-
+ 
 
     //Getters
     public int getMedicalHistoryId(){

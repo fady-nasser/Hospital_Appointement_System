@@ -189,13 +189,7 @@ public class Main {
         System.out.println("\n--- ALL DOCTORS ---");
         for (Doctor doc : doctorList) {
             System.out.println("─".repeat(45));
-            System.out.println("ID: " + doc.getID());
-            System.out.println("Name: " + doc.getName());
-            System.out.println("Specialization: " + doc.getSpecialization());
-            System.out.println("Experience: " + doc.getExperience());
-            System.out.println("Phone: " + doc.getPhone());
-            System.out.println("Email: " + doc.getEmail());
-            System.out.println("Available Slots: " + doc.getAvailableTimeSlots().size());
+            System.out.println(doc);
         }
         System.out.println("─".repeat(45));
     }
@@ -313,12 +307,7 @@ public class Main {
         System.out.println("\n--- ALL PATIENTS ---");
         for (Patient pat : patientList) {
             System.out.println("─".repeat(45));
-            System.out.println("ID: " + pat.getID());
-            System.out.println("Name: " + pat.getName());
-            System.out.println("Age: " + pat.getAge());
-            System.out.println("Phone: " + pat.getPhone());
-            System.out.println("Email: " + pat.getEmail());
-            System.out.println("Medical History ID: " + pat.getMedicalHistoryId());
+            System.out.println(pat);
         }
         System.out.println("─".repeat(45));
     }

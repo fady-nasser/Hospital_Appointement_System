@@ -43,7 +43,25 @@ public abstract class  Person{
     public String getEmail(){
         return email;
     }
-    //abstract method
-    public abstract void display();
-        
+    
+    //toString override
+    @Override
+    public String toString() {
+        return "ID: " + ID + ", Name: " + name;
+    }
+
+    //equals override
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Person person = (Person) obj;
+        return ID == person.ID;
+    }
+
+    //hashCode override (always override hashCode when overriding equals)
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(ID);
+    }
 }

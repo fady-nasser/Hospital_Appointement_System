@@ -20,6 +20,12 @@ public class Doctor extends Person {
         this.availableTimeSlots=availableTimeSlots;
     }
 
+    //toString override
+    @Override
+    public String toString() {
+        return super.toString() + "\nSpecialization: " + specialization + "\nExperience: " + experience + "\nAvailable Slots: " + availableTimeSlots.size();
+    }
+
 
     //Setters
     public void setExperience(String experience){
@@ -30,14 +36,6 @@ public class Doctor extends Person {
     }
     public void setAvailableTimeSlots(ArrayList<LocalDateTime> availableTimeSlots){
         this.availableTimeSlots=availableTimeSlots;
-    }
-    //override
-    public void display(){
-        System.out.println("--Doctor details--");
-        System.out.println("Name:" + getName());
-        System.out.println("Specialization" + specialization);
-        System.out.println("Experience" + experience);
-        System.out.println("ID" + getID());
     }
         
     //Getters
