@@ -23,6 +23,13 @@ public class Patient extends Person{
     public void setAge(int age){
         this.age=age;
     }
+        //override
+    public void display(){
+        System.out.println("--Patient details--");
+        System.out.println("Name:" + getName());
+        System.out.println("Age" + age);
+        System.out.println("ID" + getID());
+    }
 
 
     //Getters
